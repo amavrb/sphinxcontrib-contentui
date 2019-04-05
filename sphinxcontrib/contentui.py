@@ -4,6 +4,7 @@ Content ui specs
 =================
 """
 import os
+import uuid
 from docutils.parsers.rst import Directive, directives
 from docutils import nodes
 from docutils.statemachine import StringList
@@ -27,6 +28,10 @@ class ContentTabsDirective(Directive):
         text = '\n'.join(self.content)
         node = nodes.container(text)
         node['classes'].append('content-tabs')
+
+        if self.arguments:
+            id = uuid.uuid4();
+            node['classes'].append(id)
 
         if self.arguments and self.arguments[0]:
             node['classes'].append(self.arguments[0])

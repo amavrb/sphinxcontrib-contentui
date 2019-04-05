@@ -60,12 +60,17 @@ $(function() {
             var tabsblock = $(this).parents('.content-tabs');
         }
 
+        console.log(nbrChildren)
         var sel_class = $(this).attr('class');
+        if($(this).parent().children().length == 1){
+        return;
+        }else{
         $('div.contenttab',tabsblock).hide();
         $('div#' + sel_class,tabsblock).show();
 
         $('ul.contenttab-selector li', tabsblock).removeClass('selected');
         $('ul.contenttab-selector li.' + sel_class, tabsblock).addClass('selected');
+        }
 
         sel_class = null;
     });
