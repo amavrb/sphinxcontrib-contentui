@@ -47,8 +47,8 @@ class ContentTabsContainerDirective(Directive):
         self.assert_has_content()
         text = '\n'.join(self.content)
         node = nodes.container(text)
-        node['ids'].append(id)
-        node['ids'].append(self.arguments[0])
+        node['ids'].append(str(id))
+        node['ids'].append('tab-%s' % self.arguments[0])
         node['classes'].append('tab-content')
 
         par = nodes.paragraph(text=self.options["title"])
