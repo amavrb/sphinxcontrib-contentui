@@ -60,7 +60,6 @@ $(function() {
             var tabsblock = $(this).parents('.content-tabs');
         }
 
-        console.log(nbrChildren)
         var sel_class = $(this).attr('class');
         if($(this).parent().children().length == 1){
         return;
