@@ -29,12 +29,6 @@ class ContentTabsDirective(Directive):
         node = nodes.container(text)
         node['classes'].append('content-tabs')
 
-        """
-        if self.arguments:
-            id = uuid.uuid4();
-            node['classes'].append()
-        """
-        
         if self.arguments and self.arguments[0]:
             node['classes'].append(self.arguments[0])
 
